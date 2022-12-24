@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body, input, button, textarea {
-        font: "500 1rem 'Roboto', sans-serif",
+        font: 500 1rem 'Space Grotesk', sans-serif;
     }
 
     :focus {
