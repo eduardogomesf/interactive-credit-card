@@ -1,17 +1,14 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import { Container } from "./styles";
 
-type ButtonProps = {
-    onClick: () => void
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode
     isLoading: boolean
 }
 
-export function Button({ onClick, isLoading, children, ...rest }: ButtonProps) {
+export function Button({ isLoading, children, ...rest }: ButtonProps) {
     return (
         <Container
-            onClick={onClick}
-            disabled={isLoading}
             {...rest}
         >
             {children}
