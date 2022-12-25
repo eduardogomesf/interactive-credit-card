@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
     width: 100%;
+
+    display: flex;
 `
 
 export const Aside = styled.aside`
@@ -25,7 +27,14 @@ export const Aside = styled.aside`
 `
 
 export const MainContent = styled.div`
-    display: inline;
     width: 100%;
     height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    > div {
+        width: 381px;
+        margin-left: 349px;
+    }
 `

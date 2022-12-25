@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CreditCardBack } from "../../components/CreditCardBack";
 import { CreditCardFront } from "../../components/CreditCardFront";
+import { Form } from "../../components/Form";
 import { Aside, HomeContainer, MainContent } from "./styles";
 
 type CreditCard = {
@@ -24,6 +25,9 @@ export function Home() {
                 </div>
             </Aside>
             <MainContent>
+                <div>
+                    <Form />
+                </div>
             </MainContent>
         </HomeContainer>
     )
