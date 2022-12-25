@@ -1,23 +1,26 @@
+import { useState } from "react";
 import { CreditCardBack } from "../../components/CreditCardBack";
 import { CreditCardFront } from "../../components/CreditCardFront";
 import { Aside, HomeContainer, MainContent } from "./styles";
 
-const mockCreditCard = {
-    ownerName: 'Eduardo Gomes',
-    number: '5162929645842495',
-    expirationDate: new Date('01-06-2022'),
-    cvc: '145'
+type CreditCard = {
+    ownerName: string
+    number: string
+    expirationDate: Date
+    cvc: string
 }
 
 export function Home() {
+    const [creditCard, setCreditCard] = useState<CreditCard>({} as CreditCard)
+
     return (
         <HomeContainer>
             <Aside>
                 <div>
                     <CreditCardFront
-                        creditCard={mockCreditCard}
+                        creditCard={creditCard}
                     />
-                    <CreditCardBack cvc={mockCreditCard.cvc} />
+                    <CreditCardBack cvc={creditCard.cvc} />
                 </div>
             </Aside>
             <MainContent>
