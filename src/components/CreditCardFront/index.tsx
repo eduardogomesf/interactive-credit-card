@@ -28,7 +28,7 @@ export function CreditCardFront({ creditCard = {} as any }: CreditCardFrontProps
             </CardNumberContainer>
 
             <CardFooter>
-                <strong>{creditCard.ownerName ? creditCard.ownerName : 'Your name'}</strong>
+                <strong>{creditCard.ownerName ?? 'Your name'}</strong>
                 <strong>{creditCard.expirationDate ? getExpirationDate(creditCard.expirationDate) : '00/00'}</strong>
             </CardFooter>
         </Container>

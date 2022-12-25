@@ -7,7 +7,7 @@ type CreditCardBackProps = {
 export function CreditCardBack({ cvc }: CreditCardBackProps) {
     return (
         <Container>
-            <strong>{cvc}</strong>
+            <strong>{cvc ?? '000'}</strong>
         </Container>
     )
 }
