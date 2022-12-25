@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { InputHTMLAttributes, useState } from "react";
 import { Label } from "../Label";
 import { Container, Error } from "./styles";
 
-type TextInputProps = {
+type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
     value: any
     setValue: (value: string) => void
     placeholder: string
