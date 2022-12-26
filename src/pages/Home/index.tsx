@@ -4,24 +4,20 @@ import { CreditCardFront } from "../../components/CreditCardFront";
 import { Form } from "../../components/Form";
 import { Aside, HomeContainer, MainContent } from "./styles";
 
-type CreditCard = {
-    ownerName: string
+export type CreditCard = {
+    cardholder: string
     number: string
     expirationDate: Date
     cvc: string
 }
 
 export function Home() {
-    const [creditCard, setCreditCard] = useState<CreditCard>({} as CreditCard)
-
     return (
         <HomeContainer>
             <Aside>
                 <div>
-                    <CreditCardFront
-                        creditCard={creditCard}
-                    />
-                    <CreditCardBack cvc={creditCard.cvc} />
+                    <CreditCardFront />
+                    <CreditCardBack />
                 </div>
             </Aside>
             <MainContent>

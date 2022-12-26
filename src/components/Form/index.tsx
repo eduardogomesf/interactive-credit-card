@@ -1,35 +1,32 @@
 import { FormEvent, useState } from "react";
+import { useCreditCard } from "../../hooks/useCreditCard";
 import { Button } from "../Button";
 import { Label } from "./Label";
 import { Container, InlineInputsContainer, InputsContainer } from "./styles";
 import { TextInput } from "./TextInput";
 
 export function Form() {
-    const [cardholder, setCardholder] = useState('')
     const [cardholderHasError, setCardholderHasError] = useState(false)
-
-    const [cardNumber, setCardNumber] = useState('')
     const [cardNumberHasError, setCardNumberHasError] = useState(false)
-
-    const [expirationMonth, setExpirationMonth] = useState('')
     const [expirationMonthHasError, setExpirationMonthHasError] = useState(false)
-
-    const [expirationYear, setExpirationYear] = useState('')
     const [expirationYearHasError, setExpirationYearHasError] = useState(false)
-
-    const [cvc, setCvc] = useState('')
     const [cvcHasError, setCVCHasError] = useState(false)
+
+    const {
+        cardholder,
+        cardNumber,
+        cvc,
+        expirationMonth,
+        expirationYear,
+        setCardholder,
+        setCvc,
+        setExpirationMonth,
+        setExpirationYear,
+        setCardNumber,
+    } = useCreditCard()
 
     function handleClick(event: FormEvent) {
         event.preventDefault()
-
-        console.log({
-            cardholder,
-            cardNumber,
-            expirationMonth,
-            expirationYear,
-            cvc
-        })
     }
 
     return (

@@ -1,8 +1,7 @@
-export function getExpirationDate(date: Date) {
-    const formattedYear = date.getFullYear().toString().slice(2, 4)
-    const normalizedMonth = String(date.getMonth() + 1)
-    const formattedMonth = normalizedMonth.length > 1 ? normalizedMonth : `0${normalizedMonth}`
-    return `${formattedMonth}/${formattedYear}`
+export function getExpirationDate(month: string, year: string): string {
+    const normalizedMonth = month ? month : '00'
+    const normalizedYear = year ? year : '00'
+    return `${normalizedMonth}/${normalizedYear}`
 }
 
 export function getCreditCardNumberDividedByGroupsOfFourDigits(creditCardNumber: string): string[] {
@@ -18,7 +17,7 @@ export function getCreditCardNumberDividedByGroupsOfFourDigits(creditCardNumber:
         normalizedCreditCardNumber = creditCardNumber + '0'.repeat(numberOfZerosToAdd)
     }
 
-    const dividedCreditCardNumbers = creditCardNumber.match(/.{4}/g)!.map(fourDigits => fourDigits)
+    const dividedCreditCardNumbers = normalizedCreditCardNumber.match(/.{4}/g)!.map(fourDigits => fourDigits)
 
     return dividedCreditCardNumbers
 }

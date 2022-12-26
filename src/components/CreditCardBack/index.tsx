@@ -1,13 +1,12 @@
+import { useCreditCard } from "../../hooks/useCreditCard";
 import { Container } from "./styles";
 
-type CreditCardBackProps = {
-    cvc: string
-}
+export function CreditCardBack() {
+    const { cvc } = useCreditCard()
 
-export function CreditCardBack({ cvc }: CreditCardBackProps) {
     return (
         <Container>
-            <strong>{cvc ?? '000'}</strong>
+            <strong>{cvc ? cvc : '000'}</strong>
         </Container>
     )
 }
